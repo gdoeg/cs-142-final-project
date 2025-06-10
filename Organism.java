@@ -4,9 +4,10 @@
  * This class is abstract, meaning it is not used directly but inherited by other classes.
  */
 
-import java.awt.Color;
+import java.awt.*;
 
 public abstract class Organism {
     public abstract void act(Grid grid);
     public abstract Color getColor();
+    public boolean isAlive() { return true; } // Simplified for now
 }
