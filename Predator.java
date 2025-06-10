@@ -9,6 +9,9 @@ public abstract class Predator extends Animal {
         prey.alive = false;
     }
 
+    // Needs "enough" energy to reproduce 
+    // loses half od its energy 
+    // spawns new offspring at r,c location
     public void reproduce(Grid grid, int r, int c) {
         if (energy >= 10) {
             energy /= 2;

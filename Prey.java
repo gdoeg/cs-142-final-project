@@ -10,6 +10,9 @@ public abstract class Prey extends Animal {
         }
     }
 
+    // Has to have "enough" energy to reproduce 
+    // loses half of its energy reproducing 
+    // spawns new offspring at r,c location
     public void reproduce(Grid grid, int r, int c) {
         if (energy >= 8) {
             energy /= 2;
