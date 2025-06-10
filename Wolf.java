@@ -27,7 +27,8 @@ public class Wolf extends Predator {
     public void move(Grid grid) {
         int currentR = -1, currentC = -1;
 
-        // Find current location
+        // Find current location and sets currentR and currentC to current 
+        // row and column
         for (int r = 0; r < grid.rows; r++) {
             for (int c = 0; c < grid.cols; c++) {
                 if (grid.get(r, c) == this) {
@@ -38,11 +39,19 @@ public class Wolf extends Predator {
             }
         }
 
+        // exits sim if location not found on grid
         if (currentR == -1 || currentC == -1) return;
 
+        // defines directions and shuffles them / randomizes the order
+        // so organism doesn't try moving in the same direction first
         int[][] dirs = {{-1,0},{1,0},{0,-1},{0,1}};
         Collections.shuffle(Arrays.asList(dirs));
 
+        // For each shuffled direction:
+        // - new coordinates calculated
+        // - checks if new spot is within boundaries or empty 
+        // if so moves organism to that cell, clears old position
+        // breaks the loop 
         for (int[] dir : dirs) {
             int newR = currentR + dir[0];
             int newC = currentC + dir[1];
