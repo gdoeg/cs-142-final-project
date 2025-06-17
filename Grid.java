@@ -1,8 +1,5 @@
-/**
- * Represents the 2D world where the simulation takes place.
- * Each cell in the grid can hold one organism (or be empty).
- * The grid provides methods to get or set organisms at specific positions.
- */
+// This class represents the simulation world as a grid of cells.
+// It stores organisms, allows access/modification, and updates the simulation with each step.
 
 import java.util.*;
 
@@ -23,21 +20,18 @@ public class Grid {
     }
 
     public void step() {
+        // Copy to avoid concurrent modification
         List<Organism> organisms = new ArrayList<>();
         for (int r = 0; r < rows; r++) {
             for (int c = 0; c < cols; c++) {
                 Organism o = grid[r][c];
-                if (o != null && o.isAlive()) {
-                    organisms.add(o);
-                }
+                if (o != null && o.isAlive()) organisms.add(o);
             }
         }
-    
         for (Organism o : organisms) {
-            o.act(this); // Organisms move, eat, reproduce, etc.
+            o.act(this);
         }
     }
-    
 
     public Organism get(int r, int c) {
         return grid[r][c];

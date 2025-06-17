@@ -6,20 +6,15 @@
 
  import java.awt.*;
 
- public class Grass extends Plant {
+ public class Grass extends Organism {
      @Override
      public void act(Grid grid) {
-         // Optional: implement regrow logic later
+         // Regrow logic (optional)
      }
  
      @Override
      public Color getColor() {
          return Color.GREEN;
-     }
- 
-     @Override
-     public boolean isEdible() {
-         return true;  // Rabbits can eat grass
      }
  }
  

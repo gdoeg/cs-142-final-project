@@ -1,5 +1,8 @@
-import javax.swing.*;
+// This class sets up the main GUI window using a JFrame.
+// It contains both the simulation panel (where the animation is shown) and the control panel (with Pause and Reset buttons).
+
 import java.awt.*;
+import javax.swing.*;
 
 public class SimulationFrame extends JFrame {
     private SimulationPanel simulationPanel;

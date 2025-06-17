@@ -1,6 +1,8 @@
+// This class provides user interface controls (Pause and Reset buttons) for the simulation.
+// It sends commands to the SimulationPanel when buttons are clicked.
+
+
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
 
 public class ControlPanel extends JPanel {
     private JButton pauseButton, resetButton;

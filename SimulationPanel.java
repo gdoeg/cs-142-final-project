@@ -1,3 +1,7 @@
+// This class runs and draws the simulation.
+// It updates the grid every half-second unless the simulation is paused.
+// It also handles pausing and resetting the simulation.
+
 import java.awt.*;
 import javax.swing.*;
 
@@ -22,10 +26,8 @@ public class SimulationPanel extends JPanel {
     public void resetSimulation() {
         grid = new Grid(10, 10);
         grid.initialize();
-        paused = false;
         repaint();
     }
-    
 
     public void togglePause() {
         paused = !paused;

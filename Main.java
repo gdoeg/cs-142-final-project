@@ -4,7 +4,6 @@
  * and prints the grid in text format to the console.
  */
 
-// Main.java
 import javax.swing.*;
 
 public class Main {
